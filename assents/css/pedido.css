@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin-top: 90px;
+  min-height: 100%;
+  background: #303030
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #78612f;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  margin: 0 24px;
+}
+
+.logo .menu-icon {
+  color: #333;
+  font-size: 24px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.logo .logo-name {
+  color: #333;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: 'bungee', cursive;
+  text-decoration: none;
+}
+
+nav .sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 260px;
+  padding: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+nav.open .sidebar {
+  left: 0;
+}
+
+.sidebar .sidebar-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
+}
+
+.sidebar-content .list {
+  list-style: none;
+}
+
+.list .nav-link {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.lists .nav-link:hover {
+  background: #c4c5c5;
+  transition: background 0.5s;
+}
+
+.nav-link .icon {
+  margin-right: 14px;
+  font-size: 20px;
+  color: #8d1b1b;
+}
+.list .nav-link .icon {
+  font-size: 20px;
+  color: #707070;
+}
+
+.nav-link .link {
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+}
+
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 1000vh;
+  width: 200%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav.open~.overlay {
+  opacity: 1;
+  left: 260px;
+  pointer-events: auto;
+}
+
+/* Submenu oculto */
+.submenu {
+  display: none;
+  list-style: none;
+  margin: 5px 0;
+}
+
+.submenu li {
+  margin: 8px 0;
+}
+
+.submenu li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.submenu li a:hover {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Mostrar quando passar o mouse */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.has-submenu .icon {
+  margin-left: 14px;
+  font-size: 20px;
+  color: #707070;
+}
+
+.has-submenu .link {
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+}
+
+/* Item pai */
+.menu-item {
+  display: flex;
+  padding: 12px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.5s;
+  align-items: start;
+}
+
+.menu-item:hover {
+  background: #c4c5c5;
+}
+
+.menu-item:hover .link,
+.menu-item:hover .icon {
+  color: #fff;
+}
+
+/* Submenu fechado */
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  background: #f8f9fa;
+  border-radius: 0 0 6px 6px;
+}
+
+/* Itens dentro do submenu */
+.submenu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 1s;
+}
+
+.submenu li a:hover {
+  background: #c4c5c5;
+}
+.submenu li a:hover {
+  color: #fff;
+}
+/* Mostrar submenu no hover */
+.list.has-submenu:hover .submenu {
+  max-height: 300px;
+  padding: 5px 0;
+}
+
+.list.has-submenu:hover .arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+
+}
+
+.list.has-submenu .arrow {
+  margin-left: auto;
+  transition: transform 0.3s;
+  color: #707070;
+}
+/* Base */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin-top: 30px;
+  max-width: 1200px;
+  margin: auto;
+  background: #828282;
+  border-radius: 8px;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+/* Formulário */
+.form-pedido {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  display: grid;
+  gap: 15px;
+}
+
+/* Linha de inputs */
+.linha {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Inputs e selects */
+input,
+select {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+}
+
+/* Botões */
+button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+/* Tabela */
+.tabela {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+tbody tr:hover {
+  background: #f1f7fd;
+}
+.total{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 18px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  font-weight: bold;
+}

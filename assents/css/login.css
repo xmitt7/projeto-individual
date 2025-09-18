@@ -1,0 +1,105 @@
+body {
+    background-color: #303030;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background-color: rgb(158, 158, 158);
+}
+
+.icone {
+    background-image: url('../img/HammerX\ \(1\).png');
+    width: 350px;
+    height: 100px;
+    mix-blend-mode: multiply;
+    
+
+}
+label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 263px;
+}
+
+input:focus {
+  border-color: #4f46e5; /* roxinho moderno */
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.5);
+  outline: none;
+}
+.lembrar {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o checkbox e o texto */
+  margin-top: 7px;
+  margin-left: 8px;
+}
+
+.lembrar input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #3498db; /* Muda a cor do checkbox nos browsers modernos */
+}
+
+.lembrar label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  margin-top: 3px;
+}
+.campo-input1,.campo-input2 {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.campo-input1{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.campo-input2{
+    display: flex;
+    flex-direction: row;
+    gap: 17px
+}
+.entrar {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 5px;
+}
+
+.entrar:hover {
+    background: linear-gradient(135deg, #00c6fb, #005bea);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.entrar:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+

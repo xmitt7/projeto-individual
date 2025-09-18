@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hammerx - Relatórios</title>
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Bungee&display=swap"
+  rel="stylesheet">
+
+<!-- CSS Customizado -->
+<link rel="stylesheet" href="../assents/css/relatorios.css">
+</head>
+<header>
+  <nav>
+    <div class="logo">
+      <i class="bx bx-menu menu-icon"></i>
+      <span class="logo-name">Hammerx</span>
+    </div>
+    <div class="sidebar">
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <a href="sidebar.html" class="logo-name">
+          <span class="logo-name">Hammerx</span>
+        </a>
+      </div>
+      <div class="sidebar-content">
+        <ul class="lists">
+          <li class="list has-submenu">
+            <div class="menu-item">
+              <i class="bx bx-cart-minus"></i>
+              <span class="link">Pedidos</span>
+              <i class="bx bx-chevron-down arrow"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="./pedidos.html">Novo pedido</a></li>
+              <li><a href="./listaPedidos.html">Consultar pedidos</a></li>
+            </ul>
+          </li>
+
+
+          <li class="list">
+            <a href="./produto.html" class="nav-link">
+              <i class='bx  bx-axe'></i>
+              <span class="link">Produtos</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="./clientes.html" class="nav-link">
+              <i class='bx  bx-community'></i>
+              <span class="link">Clientes</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="./relatorios.html" class="nav-link">
+              <i class='bx  bx-chart-line'></i>
+              <span class="link">Relatorio</span>
+            </a>
+          </li>
+        </ul>
+        <div class="bottom-cotent">
+          <li class="list">
+            <a href="./login.html" class="nav-link">
+              <i class='bx  bx-arrow-out-right-square-half'></i>
+              <span class="link">Logout</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<body>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content p-4">
+    <h2 class="page-title mb-4">Relatórios</h2>
+
+    <!-- Cards Resumo -->
+    <div class="row g-4 mb-4">
+      <div class="col-md-4">
+        <div class="card-dashboard text-center shadow-sm rounded">
+          <div class="card-body">
+            <h3 class="card-title fw-bold">10</h3>
+            <p class="card-text text-muted">Clientes cadastrados</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-dashboard text-center shadow-sm rounded">
+          <div class="card-body">
+            <h3 class="card-title fw-bold">8</h3>
+            <p class="card-text text-muted">Pedidos do mês</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-dashboard text-center shadow-sm rounded">
+          <div class="card-body">
+            <h3 class="card-title fw-bold">R$ 1.240,00</h3>
+            <p class="card-text text-muted">Faturamento do mês</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="chart-container p-3 shadow-sm rounded bg-white">
+          <h5 class="mb-3 fw-semibold">Faturamento Mensal</h5>
+          <canvas id="faturamentoChart" height="250"></canvas>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="chart-container p-3 shadow-sm rounded bg-white">
+          <h5 class="mb-3 fw-semibold">Pedidos Mensais</h5>
+          <canvas id="pedidosChart" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <section class="overlay"></section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/assents/js/sidebar.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Gráfico de faturamento
+      new Chart(document.getElementById('faturamentoChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['03/2023', '04/2023', '05/2023', '06/2023'],
+          datasets: [{
+            label: 'Faturamento (R$)',
+            data: [850, 1200, 950, 1240],
+            backgroundColor: 'rgba(52, 152, 219, 0.7)',
+            borderColor: 'rgba(52, 152, 219, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: { responsive: true, scales: { y: { beginAtZero: true } } }
+      });
+
+      // Gráfico de pedidos
+      new Chart(document.getElementById('pedidosChart').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: ['03/2023', '04/2023', '05/2023', '06/2023'],
+          datasets: [{
+            label: 'Número de Pedidos',
+            data: [5, 8, 6, 8],
+            backgroundColor: 'rgba(231, 76, 60, 0.2)',
+            borderColor: 'rgba(231, 76, 60, 1)',
+            borderWidth: 2,
+            tension: 0.3,
+            fill: true
+          }]
+        },
+        options: { responsive: true, scales: { y: { beginAtZero: true } } }
+      });
+    });
+  </script>
+</body>
+
+</html>

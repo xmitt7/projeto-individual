@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hammerx - Produtos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assents/css/produto.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<header>
+  <nav>
+    <div class="logo">
+      <i class="bx bx-menu menu-icon"></i>
+      <span class="logo-name">Hammerx</span>
+    </div>
+    <div class="sidebar">
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <a href="sidebar.html" class="logo-name">
+          <span class="logo-name">Hammerx</span>
+        </a>
+      </div>
+      <div class="sidebar-content">
+        <ul class="lists">
+          <li class="list has-submenu">
+            <div class="menu-item">
+              <i class="bx bx-cart-minus"></i>
+              <span class="link">Pedidos</span>
+              <i class="bx bx-chevron-down arrow"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="./pedidos.html">Novo pedido</a></li>
+              <li><a href="./listaPedidos.html">Consultar pedidos</a></li>
+            </ul>
+          </li>
+
+
+          <li class="list">
+            <a href="./produto.html" class="nav-link">
+              <i class='bx  bx-axe'></i>
+              <span class="link">Produtos</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="./clientes.html" class="nav-link">
+              <i class='bx  bx-community'></i>
+              <span class="link">Clientes</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="./relatorios.html" class="nav-link">
+              <i class='bx  bx-chart-line'></i>
+              <span class="link">Relatorio</span>
+            </a>
+          </li>
+        </ul>
+        <div class="bottom-cotent">
+          <li class="list">
+            <a href="./login.html" class="nav-link">
+              <i class='bx  bx-arrow-out-right-square-half'></i>
+              <span class="link">Logout</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<body>
+
+  <div class="container">
+    <h2 class="page-title">Produtos</h2>
+
+    <!-- Cadastro -->
+    <div class="form-cadastro">
+      <input type="text" class="codigo-loja" placeholder="Código loja">
+      <input type="text" class="codigo-barras" placeholder="Código de barras">
+      <input type="text" class="ncm" placeholder="NCM">
+      <input type="text" class="valor-venda" placeholder="Valor de venda">
+      <input type="text" class="nome-produto" placeholder="Nome do produto">
+      <input type="text" class="qtd-estoque" placeholder="Qtd no estoque">
+      <select class="tipo-produto">
+      <option>Tipo P</option>
+      <option>Tipo M</option>
+      <option>Tipo G</option>
+      </select>
+      <input type="text" class="marca-produto" placeholder="Marca do produto">
+      <input type="text" class="categoria-produto" placeholder="Categoria">
+
+      <button class="cadastrar">Cadastrar</button>
+    </div>
+
+    <!-- Busca e filtro -->
+    <div class="filtros">
+      <div class="busca">
+        <span class="icon">🔍</span>
+        <input type="text" placeholder="Busca">
+      </div>
+      <div class="filtro">
+        <select>
+          <option selected>Filtro</option>
+          <option value="1">Por nome</option>
+          <option value="2">Por categoria</option>
+          <option value="3">Por código</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Lista -->
+    <div class="tabela-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nome do produto</th>
+            <th>NCM</th>
+            <th>Qtd</th>
+            <th>Tipo</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P001</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="overlay"></section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assents/js/sidebar.js"></script>
+</body>
+
+</html>
