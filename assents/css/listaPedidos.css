@@ -37,6 +37,9 @@ nav .logo {
   margin-right: 14px;
   cursor: pointer;
 }
+.menu-icon{
+  color: #333;;
+}
 
 .logo .logo-name {
   color: #333;
@@ -290,6 +293,7 @@ input:focus {
   border-color: #3498db;
   box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
 }
+
 
 /* Botões */
 button {

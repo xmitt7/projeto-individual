@@ -37,6 +37,9 @@ nav .logo {
   margin-right: 14px;
   cursor: pointer;
 }
+.menu-icon{
+  color: #333;;
+}
 
 .logo .logo-name {
   color: #333;
