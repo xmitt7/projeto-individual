@@ -76,37 +76,29 @@
     <h2 class="page-title">Produtos</h2>
 
     <!-- Cadastro -->
-    <div  class="form-cadastro">
-      <input type="text" class="codigo-loja" placeholder="Código loja">
-      <input type="text" class="codigo-barras" placeholder="Código de barras">
-      <input type="text" class="ncm" placeholder="NCM">
-      <input type="text" class="valor-venda" placeholder="Valor de venda">
+    <div class="form-cadastro">
+      <input type="text" id="codigoLoja" class="codigo-loja" placeholder="Código loja">
+      <input type="text" id="codigoBarras" class="codigo-barras" placeholder="Código de barras">
+      <input type="text" id="ncm" class="ncm" placeholder="NCM">
+      <input type="number" id="valorVenda" class="valor-venda" placeholder="Valor de venda">
       <input type="text" id="nomeProduto" class="nome-produto" placeholder="Nome do produto">
-      <input type="text" class="qtd-estoque" placeholder="Qtd no estoque">
-      <select class="tipo-produto">
+      <input type="number" id="qtdEstoque" class="qtd-estoque" placeholder="Qtd no estoque">
+      <select id="tipoProduto" class="tipo-produto">
         <option>Tipo P</option>
         <option>Tipo M</option>
         <option>Tipo G</option>
       </select>
-      <input type="text" class="marca-produto" placeholder="Marca do produto">
-      <input type="text" class="categoria-produto" placeholder="Categoria">
-
-      <button class="cadastrar">Cadastrar</button>
+      <input type="text" id="marcaProduto" class="marca-produto" placeholder="Marca do produto">
+      <input type="text" id="categoriaProduto" class="categoria-produto" placeholder="Categoria">
+      <button id="btnCadastrar" class="cadastrar">Cadastrar</button>
     </div>
 
-    <!-- Busca e filtro -->
-    <div class="filtros">
+    <!-- Busca  -->
+   <div class="filtros">
       <div class="busca">
         <span class="icon">🔍</span>
-        <input type="text" placeholder="Busca">
-      </div>
-      <div class="filtro">
-        <select>
-          <option selected>Filtro</option>
-          <option value="1">Por nome</option>
-          <option value="2">Por categoria</option>
-          <option value="3">Por código</option>
-        </select>
+        <input type="text" id="campoBusca" placeholder="Buscar produto...">
+        <button id="btnBuscar">Buscar</button>
       </div>
     </div>
 
@@ -124,10 +116,8 @@
             <th>Ações</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>P001</td>
-          </tr>
+        <tbody id="tabela-produtos">
+          <tr><td colspan="7">Nenhum produto carregado.</td></tr>
         </tbody>
       </table>
     </div>
